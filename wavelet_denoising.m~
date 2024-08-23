@@ -1,0 +1,12 @@
+level = 5;
+threshold_type = 'sqtwolog';
+data = mean(phi_fit_data.phi_fits_6, 2, 'omitnans')
+x = mean(phi_fit_data.time_stamps_6, 2, 'omitnans')
+smoothed_data = wdenoise(data, level, 'Wavelet', 'db4', 'DenoisingMethod', 'Sure', 'ThresholdRule', threshold_type);
+
+
+%%
+figure;
+hold on;
+plot(
+plot(x, smoothed_data)
